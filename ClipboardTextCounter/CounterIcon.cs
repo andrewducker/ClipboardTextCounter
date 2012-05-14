@@ -15,6 +15,8 @@ namespace ClipboardTextCounter
         public CounterIcon()
         {
             menu.MenuItems.Add("Count", delegate { CountText(); });
+            menu.MenuItems.Add("-");
+            menu.MenuItems.Add("About", delegate { System.Diagnostics.Process.Start(@"https://github.com/andrewducker/ClipboardTextCounter"); });
             menu.MenuItems.Add("Exit", delegate { Application.Exit(); });
             notifyIcon.Text = "Clipboard Text Counter";
             notifyIcon.Icon = new Icon(SystemIcons.Question, 40, 40);
