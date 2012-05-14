@@ -21,7 +21,13 @@ namespace ClipboardTextCounter
             notifyIcon.Text = "Clipboard Text Counter";
             notifyIcon.Icon = new Icon(SystemIcons.Question, 40, 40);
             notifyIcon.ContextMenu = menu;
+            notifyIcon.Click += NotifyIconClick;
             notifyIcon.Visible = true;
+        }
+
+        static void NotifyIconClick(object sender, EventArgs e)
+        {
+            CountText();
         }
 
         protected override void WndProc(ref Message m)
